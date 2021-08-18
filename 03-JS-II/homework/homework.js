@@ -66,14 +66,14 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-  switch(color){
-    case blue :
-       return 'This is blue'
-    case Red : 
+  switch(color) {
+    case 'blue' : 
+    return 'This is blue'
+    case 'red' : 
        return 'This is red'
-    case green : 
+    case 'green' : 
        return 'This is green'
-    case orange : 
+    case 'orange' : 
        return 'This is orange'
     default : 
        return 'Color not found'
@@ -120,15 +120,15 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if(numero % 3 === 0){
-    return 'fizz'
-  }else if(numero % 5 === 0){
-    return 'buzz'
-  }else if(numero % 3 === 0 && numero % 5 === 0){
+  if(numero % 15 === 0)
     return 'fizzbuzz'
-  }else{
+  if(numero % 5 === 0)
+    return 'buzz'
+  if(numero % 3 === 0)
+    return 'fizz'
+
     return numero
-  }
+  
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -157,11 +157,14 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-  if(numero === 0 || numero === 1){
-    return false
-  }else if(numero % numero === 0 && numero & 1 === 0){
-    return true
-  }return false
+  if(numero < 2) return false
+  if(numero === 2) return true
+    for( var o = 2; o < numero; o++){
+      if(numero % o === 0){
+        return false
+      }
+    }
+  return true
 }
 
 function esVerdadero(valor){
@@ -190,14 +193,23 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  if(numero > 99 && numero < 1000){
+    return true
+  }
+  return false
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-  
+  i = numero
+  a = 0
+  do {
+    i = i + 5
+    a = a + 1
+  } while(a < 8)
+  return i
 }
 
 
