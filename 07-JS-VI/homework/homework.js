@@ -34,8 +34,7 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  var suma = 0
-  suma = numeros.reduce(function(acc, elementos){
+  var suma = numeros.reduce(function(acc, elementos){
     return acc  + elementos;
   }) 
   return cb(suma)
@@ -65,9 +64,10 @@ function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
-  return array.filter(function(elemento){
+  var nuevoarray =array.filter(function(elemento){
     return elemento[0] === 'a'
   }) 
+  return nuevoarray
 }
 
 // No modificar nada debajo de esta línea
